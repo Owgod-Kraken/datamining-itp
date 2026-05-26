@@ -11,3 +11,4 @@ matplotlib
 seaborn
 gunicorn
 python-dotenv
+gunicorn==21.2.0
