@@ -1,0 +1,13 @@
+Flask
+Flask-CORS
+pandas
+numpy
+scikit-learn
+SQLAlchemy
+psycopg2-binary
+openpyxl
+reportlab
+matplotlib
+seaborn
+gunicorn
+python-dotenv
