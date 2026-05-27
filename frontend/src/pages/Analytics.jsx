@@ -112,11 +112,11 @@ export default function Analytics() {
     { id: 'stats', label: 'Estadística', icon: FiActivity },
   ]
 
-  const filteredPreview = preview ? {
+  const filteredPreview = preview && Array.isArray(preview.data) ? {
     ...preview,
     data: preview.data.filter(row => {
-      const carreraIdx = preview.columns.findIndex(c => c.toLowerCase().includes('carrera'))
-      const semestreIdx = preview.columns.findIndex(c => c.toLowerCase().includes('semestre'))
+      const carreraIdx = preview.columns?.findIndex(c => c.toLowerCase().includes('carrera')) ?? -1
+      const semestreIdx = preview.columns?.findIndex(c => c.toLowerCase().includes('semestre')) ?? -1
       let pass = true
       if (filterCarrera && carreraIdx >= 0) {
         pass = pass && row[carreraIdx]?.toString().toLowerCase().includes(filterCarrera.toLowerCase())

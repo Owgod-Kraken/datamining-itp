@@ -6,8 +6,8 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
-export default function HistogramChart({ values, title, bins = 10 }) {
-  const numericValues = values.filter(v => typeof v === 'number' && !isNaN(v))
+export default function HistogramChart({ values = [], title, bins = 10 }) {
+  const numericValues = (values || []).filter(v => typeof v === 'number' && !isNaN(v))
   if (numericValues.length === 0) return <p>No hay datos numéricos</p>
 
   const min = Math.min(...numericValues)

@@ -308,12 +308,12 @@ export default function DataQuality() {
                   <div style={{ height: '300px' }}>
                     <Bar
                       data={{
-                        labels: analysis.errores
+                        labels: (analysis?.errores || [])
                           .filter(e => e.tipo === 'Nulo')
-                          .map(e => e.columna.length > 18 ? e.columna.substring(0, 18) + '..' : e.columna),
+                          .map(e => e.columna && e.columna.length > 18 ? e.columna.substring(0, 18) + '..' : (e.columna || '')),
                         datasets: [{
                           label: 'Registros afectados',
-                          data: analysis.errores.filter(e => e.tipo === 'Nulo').map(e => e.registros_afectados),
+                          data: (analysis?.errores || []).filter(e => e.tipo === 'Nulo').map(e => e.registros_afectados),
                           backgroundColor: 'rgba(245, 158, 11, 0.6)',
                           borderColor: '#f59e0b',
                           borderWidth: 1,
@@ -497,13 +497,13 @@ export default function DataQuality() {
                             datasets: [
                               {
                                 label: 'Normal',
-                                data: data.values.filter((_, i) => !data.is_outlier[i]).map((v, i) => ({ x: data.indices.filter((_, j) => !data.is_outlier[j])[i], y: v })),
+                                data: (data?.values || []).filter((_, i) => !data?.is_outlier?.[i]).map((v, i) => ({ x: (data?.indices || []).filter((_, j) => !data?.is_outlier?.[j])[i], y: v })),
                                 backgroundColor: 'rgba(41, 98, 255, 0.5)',
                                 pointRadius: 4,
                               },
                               {
                                 label: 'Outlier',
-                                data: data.values.filter((_, i) => data.is_outlier[i]).map((v, i) => ({ x: data.indices.filter((_, j) => data.is_outlier[j])[i], y: v })),
+                                data: (data?.values || []).filter((_, i) => data?.is_outlier?.[i]).map((v, i) => ({ x: (data?.indices || []).filter((_, j) => data?.is_outlier?.[j])[i], y: v })),
                                 backgroundColor: 'rgba(239, 68, 68, 0.8)',
                                 pointRadius: 6,
                                 pointStyle: 'triangle',

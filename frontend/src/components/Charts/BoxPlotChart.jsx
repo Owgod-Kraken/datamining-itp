@@ -6,8 +6,8 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
-function computeBoxStats(values) {
-  const sorted = [...values].filter(v => !isNaN(v)).sort((a, b) => a - b)
+function computeBoxStats(values = []) {
+  const sorted = [...(values || [])].filter(v => !isNaN(v)).sort((a, b) => a - b)
   if (sorted.length === 0) return null
   const q1 = sorted[Math.floor(sorted.length * 0.25)]
   const median = sorted[Math.floor(sorted.length * 0.5)]
@@ -17,7 +17,7 @@ function computeBoxStats(values) {
   return { min, q1, median, q3, max }
 }
 
-export default function BoxPlotChart({ data: rawData, columns, title }) {
+export default function BoxPlotChart({ data: rawData = [], columns = [], title }) {
   if (!columns || columns.length === 0) return <p>No hay columnas numéricas</p>
 
   const stats = columns.map(col => {
