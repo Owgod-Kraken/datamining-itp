@@ -19,6 +19,8 @@ def get_filepath(archivo_id):
     db.close()
     if not archivo:
         return None
+    if archivo.nombre == "encuesta_servicio_social.csv":
+        return os.path.join(DATASET_FOLDER, archivo.nombre)
     return os.path.join(UPLOAD_FOLDER, archivo.nombre)
 
 

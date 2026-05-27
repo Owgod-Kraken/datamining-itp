@@ -9,6 +9,7 @@ from services.data_service import load_dataframe
 upload_bp = Blueprint("upload", __name__)
 
 UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.dirname(__file__)), "uploads")
+DATASET_FOLDER = os.path.join(os.path.dirname(os.path.dirname(__file__)), "dataset")
 ALLOWED_EXTENSIONS = {"csv", "xlsx", "xls"}
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -91,7 +92,10 @@ def preview_archivo(archivo_id):
     if not archivo:
         return jsonify({"error": "Archivo no encontrado"}), 404
 
-    filepath = os.path.join(UPLOAD_FOLDER, archivo.nombre)
+    if archivo.nombre == "encuesta_servicio_social.csv":
+        filepath = os.path.join(DATASET_FOLDER, archivo.nombre)
+    else:
+        filepath = os.path.join(UPLOAD_FOLDER, archivo.nombre)
     if not os.path.exists(filepath):
         return jsonify({"error": "Archivo no encontrado en disco"}), 404
 
