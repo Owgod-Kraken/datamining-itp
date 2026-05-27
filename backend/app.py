@@ -12,7 +12,7 @@ from routes.quality_routes import quality_bp
 from services.data_service import load_dataframe
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/api/*": {"origins": "*", "allow_headers": ["Content-Type", "Authorization"], "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]}})
 
 app.config["MAX_CONTENT_LENGTH"] = 50 * 1024 * 1024  # 50MB
 
@@ -71,4 +71,5 @@ if __name__ == "__main__":
     init_db()
     load_default_dataset()
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    debug = os.environ.get("FLASK_DEBUG", "true").lower() == "true"
+    app.run(host="0.0.0.0", port=port, debug=debug)
