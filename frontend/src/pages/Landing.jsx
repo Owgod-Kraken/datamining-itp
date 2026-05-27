@@ -181,7 +181,7 @@ export default function Landing() {
           textAlign: 'center', padding: '20px',
           color: 'rgba(255,255,255,0.4)', fontSize: '0.8rem',
         }}>
-          DataMining ITP &copy; 2026 - Instituto Tecnológico de Pachuca
+          DataMining ITP &copy; 2026 - Instituto Tecnológico de Puebla
         </div>
       </div>
     </div>

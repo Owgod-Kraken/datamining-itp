@@ -179,7 +179,7 @@ export default function Login() {
           textAlign: 'center', color: '#9ca3af',
           fontSize: '0.75rem', marginTop: '20px',
         }}>
-          Instituto Tecnológico de Pachuca &copy; 2026
+          Instituto Tecnológico de Puebla &copy; 2026
         </p>
       </div>
 
