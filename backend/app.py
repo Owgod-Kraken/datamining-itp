@@ -8,6 +8,7 @@ from routes.upload_routes import upload_bp
 from routes.data_routes import data_bp
 from routes.mining_routes import mining_bp
 from routes.report_routes import report_bp
+from routes.quality_routes import quality_bp
 from services.data_service import load_dataframe
 
 app = Flask(__name__)
@@ -19,6 +20,7 @@ app.register_blueprint(upload_bp)
 app.register_blueprint(data_bp)
 app.register_blueprint(mining_bp)
 app.register_blueprint(report_bp)
+app.register_blueprint(quality_bp)
 
 DATASET_PATH = os.path.join(os.path.dirname(__file__), "dataset", "encuesta_servicio_social.csv")
 

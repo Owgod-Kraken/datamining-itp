@@ -36,4 +36,8 @@ export const runClustering = (id, body) => api.post(`/api/mining/${id}/cluster`,
 export const exportExcel = (id) => `${API_BASE}/api/report/${id}/excel`
 export const exportPdf = (id) => `${API_BASE}/api/report/${id}/pdf`
 
+export const getQualityAnalysis = (id) => api.get(`/api/quality/${id}/analyze`)
+export const autoCorrectQuality = (id, body) => api.post(`/api/quality/${id}/correct`, body)
+export const exportQualityPdf = (id) => `${API_BASE}/api/quality/${id}/pdf`
+
 export default api

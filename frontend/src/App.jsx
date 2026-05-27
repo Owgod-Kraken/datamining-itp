@@ -8,6 +8,8 @@ import Upload from './pages/Upload'
 import Analytics from './pages/Analytics'
 import Mining from './pages/Mining'
 import Reports from './pages/Reports'
+import DataQuality from './pages/DataQuality'
+import DataQualityCenter from './pages/DataQualityCenter'
 import Layout from './components/Layout'
 
 function ProtectedRoute({ children }) {
@@ -29,6 +31,8 @@ function App() {
             <Route path="analytics" element={<Analytics />} />
             <Route path="mining" element={<Mining />} />
             <Route path="reports" element={<Reports />} />
+            <Route path="quality" element={<DataQuality />} />
+            <Route path="quality-center" element={<DataQualityCenter />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

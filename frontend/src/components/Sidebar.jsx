@@ -1,7 +1,8 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import {
   FiHome, FiUpload, FiBarChart2, FiCpu, FiFileText,
-  FiLogOut, FiDatabase, FiChevronLeft, FiChevronRight
+  FiLogOut, FiDatabase, FiChevronLeft, FiChevronRight,
+  FiShield, FiAward
 } from 'react-icons/fi'
 
 const menuItems = [
@@ -10,6 +11,8 @@ const menuItems = [
   { path: '/app/analytics', icon: FiBarChart2, label: 'Análisis de Datos' },
   { path: '/app/mining', icon: FiCpu, label: 'Minería de Datos' },
   { path: '/app/reports', icon: FiFileText, label: 'Reportes' },
+  { path: '/app/quality', icon: FiShield, label: 'Calidad de Datos' },
+  { path: '/app/quality-center', icon: FiAward, label: 'Data Quality Center' },
 ]
 
 export default function Sidebar({ isOpen, onToggle }) {

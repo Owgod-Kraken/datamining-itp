@@ -2,6 +2,7 @@ Flask
 Flask-CORS
 pandas
 numpy
+scipy
 scikit-learn
 SQLAlchemy
 psycopg2-binary
