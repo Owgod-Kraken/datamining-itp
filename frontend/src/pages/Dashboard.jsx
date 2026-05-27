@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FiDatabase, FiGrid, FiFile, FiCalendar, FiActivity, FiTrendingUp } from 'react-icons/fi'
+import { FiDatabase, FiGrid, FiFile, FiCalendar, FiActivity, FiTrendingUp, FiBarChart2 } from 'react-icons/fi'
 import { getDashboard, getFrequencies, getStats } from '../services/api'
 import KPI from '../components/KPI'
 import BarChart from '../components/Charts/BarChart'
