@@ -101,4 +101,4 @@ backend/
 └── reports/            # Generated reports
 ```
 
-## Instituto Tecnológico de Pachuca - Proyecto Final 2026
+## Instituto Tecnológico de Puebla - Proyecto Final 2026
